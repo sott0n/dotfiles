@@ -1,0 +1,7 @@
+[user]
+	email = fix7211@gmail.com
+	name = sotoshigoto
+[alias]
+	co = checkout
+[core]
+	editor = subl -w
