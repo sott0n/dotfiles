@@ -1,0 +1,62 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Create Repl'
+      'command': 'Repl:toggle'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Repl'
+      'submenu': [
+        {
+            'label': 'Create'
+            'command': 'Repl:create'
+        }
+        {
+          'label': 'Repl Python2'
+          'command': 'Repl:Repl Python2'
+        }
+        {
+          'label': 'Repl Python3'
+          'command': 'Repl:Repl Python3'
+        }
+        {
+          'label': 'Repl Ocaml'
+          'command': 'Repl:Repl Ocaml'
+        }
+        {
+          'label': 'Repl Bash'
+          'command': 'Repl:Repl Bash'
+        }
+        {
+          'label': 'Repl Coffee'
+          'command': 'Repl:Repl Coffee'
+        }
+        {
+          'label': 'Repl R'
+          'command': 'Repl:Repl R'
+        }
+        {
+          'label': 'Repl Node'
+          'command': 'Repl:Repl Node'
+        }
+        {
+          'label': 'Repl Gdb'
+          'command': 'Repl:Repl Gdb'
+        }
+        {
+          'label': 'Interprete File'
+          'command': 'Repl:interpreteFile'
+        }
+        {
+          'label': 'Interprete Selection'
+          'command': 'Repl:interpreteSelect'
+        }
+      ]
+    ]
+  }
+]
