@@ -7,6 +7,14 @@
 	precomposeunicode = true
 	editor = vim
   excludesfile = ~/.gitignore_global
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = true
+    grep = auto
+[help]
+    format = man
 [remote "origin"]
 	url = http://52.192.200.141/context-awareness/investigateAlgorithm.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
