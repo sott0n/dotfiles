@@ -1,4 +1,4 @@
-# sot07211 does dotfiles
+# sott0n does dotfiles
 This dotfiles are my personal for system.
 
 ## Lineup
@@ -14,4 +14,4 @@ This dotfiles are my personal for system.
 * zsh
 
 ## Author
-[Kohei Yamaguchi](https://github.com/sotoshigoto)
+[Kohei Yamaguchi](https://github.com/sott0n)
