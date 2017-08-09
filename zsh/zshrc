@@ -41,11 +41,6 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
 # ------------------------------------
-# Key bind (emacs)
-# ------------------------------------
-bindkey -e
-
-# ------------------------------------
 # cd
 # ------------------------------------
 setopt auto_cd
@@ -85,12 +80,13 @@ RPROMPT=''
 [ -f ~/.dotfiles/zsh/alias     ] && source ~/.dotfiles/zsh/alias
 [ -f ~/.dotfiles/zsh/functions ] && source ~/.dotfiles/zsh/functions
 [ -f ~/.dotfiles/zsh/helper/docker      ] && source ~/.dotfiles/zsh/helper/docker
+[ -f ~/.dotfiles/zsh/helper/kubectl      ] && source ~/.dotfiles/zsh/helper/kubectl
 [ -f ~/.dotfiles/zsh/helper/http_status ] && source ~/.dotfiles/zsh/helper/http_status
 
 # ------------------------------------
 # Read local settings
 # ------------------------------------
-[ -f ~/.local-dotfiles/zshrc ] && source ~/.local-dotfiles/zshrc
+[ -f ~/.localrc ] && source ~/.localrc
 
 # ------------------------------------
 # Read OS specific settings
@@ -105,38 +101,5 @@ case "${OSTYPE}" in
 	;;
 esac
 
-
-# ------------------------------------
-# PATH
-# ------------------------------------
-export PATH="~/anaconda/bin:$PATH"
-
-#------------------------------------
-# Environment
-# ------------------------------------
-alias py2='source activate py2'
-alias py3='source deactivate'
-
-# ------------------------------------
-# General
-# ------------------------------------
-alias mv='mv -i'
-alias cp='cp -i'
-alias rm='rm -i'
-alias df='df -h'
-alias du='du -h'
-alias lv8='lv -Ou8'
-alias ag='ag --ignore-dir vendor'
-alias ls='/usr/local/bin/gls --color=auto'
-alias ll='ls -l'
-alias sss='source ~/dotfiles/zsh/.zshrc'
-
-# ------------------------------------
-# Git
-# ------------------------------------
-alias gs='git status'
-alias au='git add -u; git status'
-alias gm='git checkout master'
-alias gp='git push'
-alias tt='tig'
-alias gb='git branch'
+# added by travis gem
+[ -f /Users/tcnksm/.travis/travis.sh ] && source /Users/tcnksm/.travis/travis.sh
