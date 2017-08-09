@@ -58,3 +58,9 @@ alias bd='bosh-deploy.sh'
 # Gauche
 # ------------------------------------
 alias gosh='rlwrap gosh'
+
+# ------------------------------------
+# Python
+# ------------------------------------
+alias py2='source activate py2'
+alias py3='source deactivate'
