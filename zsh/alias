@@ -8,6 +8,9 @@ alias df='df -h'
 alias du='du -h'
 alias lv8='lv -Ou8'
 alias ag='ag --ignore-dir vendor'
+alias ll='ls -la --color=auto'
+alias grep='grep --color'
+alias ps='ps --sort=start_time'
 
 # ------------------------------------
 # Git
