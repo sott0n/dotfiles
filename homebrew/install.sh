@@ -48,6 +48,9 @@ packages=(
     hub 
     tig
 
+    # Emcas
+    cask
+
     # Image
     imagemagick
 
@@ -73,7 +76,8 @@ packages=(
     pyenv
     rbenv            
     ruby-build                     
-    python3
+    # python3
+    # leiningen 
 )
 
 echo "installing binaries..."

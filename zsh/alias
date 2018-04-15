@@ -8,14 +8,11 @@ alias df='df -h'
 alias du='du -h'
 alias lv8='lv -Ou8'
 alias ag='ag --ignore-dir vendor'
-alias ll='ls -l --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 
 # ------------------------------------
 # Git
 # ------------------------------------
+alias git=hub
 alias gs='git status'
 alias au='git add -u; git status'
 alias o='git open'
@@ -24,6 +21,7 @@ alias gm='git master'
 alias gp='git push'
 
 alias tt='tig'
+alias gist='gist -p'
 
 # ------------------------------------
 # Own definition
@@ -35,6 +33,12 @@ alias sss='source ~/.zshrc'
 # ------------------------------------
 alias bi='bundle install --path vendor/bundle'
 alias bin='bundle install --path vendor/bundle --binstubs .bundle/bin'
+
+# ------------------------------------
+# Emacs
+# ------------------------------------
+alias emacs='/usr/local/bin/emacs -nw'
+alias e='/usr/local/bin/emacsclient -n'
 
 # ------------------------------------
 # Tmux
@@ -53,14 +57,3 @@ alias vs='vagrant global-status'
 # ------------------------------------
 alias cf='LANG=en_US cf'
 alias bd='bosh-deploy.sh'
-
-# ------------------------------------
-# Gauche
-# ------------------------------------
-alias gosh='rlwrap gosh'
-
-# ------------------------------------
-# Python
-# ------------------------------------
-alias py2='source activate py2'
-alias py3='source deactivate'
