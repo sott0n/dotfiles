@@ -48,10 +48,9 @@ go version
 # ------------------------------------
 # Python
 # ------------------------------------
-# export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
-# pyenv shell 2.7.11
-PATH=/usr/local/anaconda3/bin:$PATH
+export PYENV_ROOT=~/.pyenv
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # ------------------------------------
 # PHP
