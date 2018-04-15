@@ -99,9 +99,5 @@
     l = look
     ls = list
 
-[github]
-	oauth-token = 
-	user = tcnksm
-    
 [remote "origin"]
 	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
