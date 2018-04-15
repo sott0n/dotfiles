@@ -8,7 +8,6 @@ This dotfiles are my personal for system.
 * go
 * homebrew
 * peco
-* sublime
 * tmux
 * zsh
 

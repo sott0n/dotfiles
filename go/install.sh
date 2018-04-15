@@ -2,7 +2,7 @@
 
 GOVERSION=${1}
 if [ -z "${GOVERSION}" ]; then
-    GOVERSION=1.8
+    GOVERSION=1.9
 fi
 
 if [ -d ${HOME}/.go/${GOVERSION} ]; then
@@ -15,3 +15,4 @@ mkdir -p ${HOME}/.go/${GOVERSION}
 curl https://storage.googleapis.com/golang/go${GOVERSION}.darwin-amd64.tar.gz \
     | tar xvzf - -C ${HOME}/.go/${GOVERSION}/ --strip-components=1
 echo $GOVERSION > ${HOME}/.go/.goversion
+

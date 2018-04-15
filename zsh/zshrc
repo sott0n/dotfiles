@@ -41,6 +41,11 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
 # ------------------------------------
+# Key bind (emacs)
+# ------------------------------------
+bindkey -e
+
+# ------------------------------------
 # cd
 # ------------------------------------
 setopt auto_cd
@@ -100,6 +105,3 @@ case "${OSTYPE}" in
 	  [ -f ~/.dotfiles/zsh/os/linux ] && source ~/.dotfiles/zsh/os/linux
 	;;
 esac
-
-# added by travis gem
-[ -f /Users/tcnksm/.travis/travis.sh ] && source /Users/tcnksm/.travis/travis.sh
