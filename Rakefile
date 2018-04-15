@@ -16,7 +16,6 @@ def same_name_symlinks root, files
 end
 
 cleans = [
-          ".emacs.d",
           ".zshrc",
           ".tmux.conf",
           ".gitconfig",
@@ -28,25 +27,11 @@ CLEAN.concat(cleans.map{|c| File.join(HOME,c)})
 
 task :default => :setup
 task :setup => [
-              "emacs:link",
               "git:link",
               "tmux:link",
               "zsh:link",
               "peco:link",
               "etc:link"]
-
-namespace :emacs do
-  desc "Create symbolic link to HOME"
-  task :link do
-    
-    # If .emacs.d is already exist, backup it
-    if File.exist?(File.join(HOME, ".emacs.d")) && !File.symlink?(File.join(HOME, ".emacs.d")) 
-      mv File.join(HOME, ".emacs.d"), File.join(HOME, ".emacs.d.org")
-    end
-    
-    symlink_ File.join(PWD, "emacs.d"), File.join(HOME,".emacs.d")
-  end
-end
 
 namespace :zsh do
   desc "Create symbolic link to HOME/.zshrc"
