@@ -2,8 +2,8 @@
   path = ~/.gitconfig.local
 
 [user]
-  name = tcnksm
-  email = nsd22843@gmail.com
+  name = sott0n
+  email = fix7211@gmail.com
 
 [credential]
   helper = osxkeychain          
@@ -15,9 +15,6 @@
   interactive = auto
   grep = auto
 
-[core]
-  editor = "/usr/local/bin/emacsclient -t" --alternate-editor "/usr/local/bin/emacs -nw"
-  
 [merge]
   ff = false
 
@@ -87,7 +84,7 @@
   rr     = !git ls-files -z --deleted | xargs -0 git rm
   alias  = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ => \\2/' | sort
   ignore = "!ignore () { echo $1 >> .gitignore;}; ignore"
-  github = !git remote add origin https://github.com/tcnksm/$1.git && git push -u origin master
+  github = !git remote add origin https://github.com/sott0n/$1.git && git push -u origin master
   now    = rev-parse --abbrev-ref HEAD
 
 [filter "media"]
