@@ -41,11 +41,6 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
 # ------------------------------------
-# Key bind (emacs)
-# ------------------------------------
-bindkey -e
-
-# ------------------------------------
 # cd
 # ------------------------------------
 setopt auto_cd
