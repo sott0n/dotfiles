@@ -15,7 +15,6 @@ alias ps='ps --sort=start_time'
 # ------------------------------------
 # Git
 # ------------------------------------
-alias git=hub
 alias gs='git status'
 alias au='git add -u; git status'
 alias o='git open'
