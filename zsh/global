@@ -7,7 +7,6 @@
 # ------------------------------------
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 export PATH=$PATH:$HOME/bin
-export PATH=$PATH:$HOME/src/github.com/tcnksm/scripts/bin
 
 # ------------------------------------
 # Emacs Cask
@@ -73,13 +72,6 @@ PATH=/usr/local/anaconda3/bin:$PATH
 #      nodebrew use stable
 # fi
 
-# ====================================
-# TOOL
-# ====================================
-PATH=$PATH:$HOME/dev/go_appengine
-PATH=$PATH:$HOME/dev/istio-0.1.6/bin
-
-
 # ------------------------------------
 # kubectl
 # ------------------------------------
@@ -99,8 +91,3 @@ bindkey '^x' peco-kubectx
 # ------------------------------------
 eval "$(direnv hook zsh)"
 
-# ------------------------------------
-# Google Cloud SDK
-# ------------------------------------
-if [ -f '/Users/tcnksm/dev/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/tcnksm/dev/google-cloud-sdk/path.zsh.inc'; fi
-if [ -f '/Users/tcnksm/dev/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/tcnksm/dev/google-cloud-sdk/completion.zsh.inc'; fi
