@@ -35,12 +35,6 @@ alias bi='bundle install --path vendor/bundle'
 alias bin='bundle install --path vendor/bundle --binstubs .bundle/bin'
 
 # ------------------------------------
-# Emacs
-# ------------------------------------
-alias emacs='/usr/local/bin/emacs -nw'
-alias e='/usr/local/bin/emacsclient -n'
-
-# ------------------------------------
 # Tmux
 # ------------------------------------
 alias tmux='tmux -2 -f ~/.tmux.conf'
