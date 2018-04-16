@@ -38,12 +38,11 @@ fi
 # ------------------------------------
 # Go
 # ------------------------------------
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
-export GOROOT=${HOME}/.go/
-export GOPATH=${HOME}/workspace/go
+export GOVERSION=$(cat ${HOME}/.go/.goversion)
+export GOROOT=${HOME}/.go/${GOVERSION}
+export GOPATH=${HOME}
 export PATH=${GOROOT}/bin:${GOPATH}/bin:${PATH}
 export PATH=$GOPATH/src/github.com/uber/go-torch/FlameGraph:$PATH
-go version
 
 # ------------------------------------
 # Python
