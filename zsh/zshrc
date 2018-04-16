@@ -89,6 +89,9 @@ RPROMPT=''
 [ -f ~/.localrc ] && source ~/.localrc
 
 # ------------------------------------
+ssh-add -K ~/.ssh/*
+
+# ------------------------------------
 # Read OS specific settings
 # ------------------------------------
 case "${OSTYPE}" in
