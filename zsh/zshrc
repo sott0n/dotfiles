@@ -70,8 +70,8 @@ _vcs_precmd () { vcs_info }
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd _vcs_precmd 
 PROMPT='%~ %F{yellow}${vcs_info_msg_0_}%f
-🍻  '
-RPROMPT=''
+🍻 '
+ZLE_PROMPT_INDENT=0
 
 # ------------------------------------
 # Read settings
@@ -100,3 +100,5 @@ case "${OSTYPE}" in
 	  [ -f ~/.dotfiles/zsh/os/linux ] && source ~/.dotfiles/zsh/os/linux
 	;;
 esac
+
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
