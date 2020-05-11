@@ -101,4 +101,8 @@ case "${OSTYPE}" in
 	;;
 esac
 
+export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/Users/sott0n/include/
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+# opam configuration
+test -r /Users/sott0n/.opam/opam-init/init.zsh && . /Users/sott0n/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
