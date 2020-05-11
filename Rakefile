@@ -30,6 +30,7 @@ task :setup => [
               "git:link",
               "tmux:link",
               "zsh:link",
+              "nvim:link",
               "peco:link",
               "etc:link"]
 
@@ -57,6 +58,13 @@ namespace :tmux do
   desc "Create symblic link to HOME"
   task :link do
     same_name_symlinks File.join(PWD, "tmux"), ["tmux.conf"]
+  end
+end
+
+namespace :nvim do
+  desc "Create symblic link to HOME"
+  task :link do
+    same_name_symlinks File.join(PWD, "vimrc"), [".config/nvim/init.vim"]
   end
 end
 
