@@ -55,6 +55,8 @@ set list                        " Display a char that is not seeing
 set listchars=tab:>\ ,extends:< " Visualize the continuation of tabs and lines
 set showmatch                   " Show corresponding brackets or braces
 set whichwrap=b,s,h,l,<,>,[,]   " Don't stop the cursor at the beggining of end of a line
+set clipboard&                  " Set clipboard value of option into default
+set clipboard^=unnamedplus      " Clipboard
 
 " Statsu line info
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
@@ -74,6 +76,9 @@ silent! helptags ALL            " Load help file for all plugings
 " shortcut key to move splited windows
 noremap <c-h> <c-w><c-h>
 noremap <c-j> <c-w><c-j>
+
+" Map-leader
+let mapleader = " "
 
 " Close buffer without closing window
 command! Bd :bp | :sp | :bn | :bd       
@@ -101,18 +106,8 @@ noremap <C-P> :Unite buffer<CR>
 noremap <C-N> :Unite -buffer-name=file file<CR>
 " List of files used recently
 noremap <C-Z> :Unite file_mru<CR>
-" sources is directory where it opend a file now
+" Sources is directory where it opend a file now
 noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
-" Split command
-au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-" Vsplit command
-au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-" Quit with ESC & ESC
-au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
-au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-
 
 " https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
 """"""""""""""""""""""""""""""
