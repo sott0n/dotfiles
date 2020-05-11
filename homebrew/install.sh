@@ -48,8 +48,9 @@ packages=(
     hub 
     tig
 
-    # Emcas
+    # Emcas & Vim
     cask
+    neovim
 
     # Image
     imagemagick

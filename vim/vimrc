@@ -1,0 +1,50 @@
+syntax on                  " Enable syntax highlighting.
+filetype plugin indent on  " Enable file type based indentation.
+
+set number                 " Row numbers
+set title                  " File title
+set ambiwidth=double
+set smartindent
+set wildmenu                    " Activate automaticaly complement
+set wildmode=list:longest,full  " Open a menu of complement after matching longest
+set tags=./.tags;,.tags;        " Target tags path
+set virtualedit=onemore         " Move end of row
+set autoindent                  " Respect indentation when starting a new line.
+set expandtab                   " Expand tabs to spaces. Essential in Python.
+set tabstop=4                   " Number of spaces tab is counted for.
+set shiftwidth=4                " Number of spaces to use for autoindent.
+set backspace=2                 " Fix backspace behavior on most terminals.
+set fileformats=unix,dos,mac
+set fileencodings=utf-8,sjis
+set noswapfile                  " No set swap file
+set hlsearch                    " highlight of search
+set incsearch                   " Move automaticaly hit word by search
+
+colorscheme slate          " Change a colorscheme.
+
+set undofile
+if !isdirectory(expand("$HOME/.vim/undodir"))
+    call mkdir(expand("$HOME/.vim/undodir"), "p")
+endif
+set undodir=$HOME/.vim/undodir
+
+packloadall                " Load all plugins
+silent! helptags ALL       " Load help file for all plugings
+
+" shortcut key to move splited windows
+noremap <c-h> <c-w><c-h>
+noremap <c-j> <c-w><c-j>
+noremap <c-k> <c-w><c-k>
+noremap <c-l> <c-w><c-l>
+
+command! Bd :bp | :sp | :bn | :bd       " Close buffer without closing window
+
+" Close automaticaly when a last window is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
+    \ b:NERDTree.isTabTree()) | q | endif
+
+nnoremap <C-b> :CtrlPBuffer<cr>         " Mapping `CtrlPBuffer` to Ctrl-b 
+
+" Set python path to pass checkhealth in neovim
+let g:python_host_prog=$PYENV_ROOT.'/versions/2.7.15/bin/python'
+let g:python3_host_prog=$PYENV_ROOT.'/versions/3.8.0/bin/python'
