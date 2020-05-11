@@ -1,0 +1,12 @@
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+seaborn
+jupyter
+ipython
+Pillow
+nteract_on_jupyter
+bokeh
+boto3
