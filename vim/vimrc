@@ -1,10 +1,37 @@
-syntax on                  " Enable syntax highlighting.
-filetype plugin indent on  " Enable file type based indentation.
+syntax on                               " Enable syntax highlighting.
+highlight LineNr ctermfg=darkyellow     " Color of row numbers    
+colorscheme slate                       " Change a colorscheme.
 
-set number                 " Row numbers
-set title                  " File title
+""""""""""""""""""""""""""""""
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+""""""""""""""""""""""""""""""
+call plug#begin('~/.config/nvim/plugged')
+
+Plug 'tpope/vim-fugitive'
+Plug 'Shougo/neomru.vim'
+Plug 'Shougo/unite.vim'
+Plug 'justmao945/vim-clang'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-unimpaired'
+Plug 'junegunn/vim-easy-align'
+Plug 'honza/vim-snippets'
+Plug 'scrooloose/nerdtree'
+Plug 'fatih/vim-go'
+Plug 'nsf/gocode'
+
+" Initialize plugin system
+call plug#end()
+
+""""""""""""""""""""""""""""""
+" Set parameters
+""""""""""""""""""""""""""""""
+set number                      " Row numbers
+set title                       " File title
 set ambiwidth=double
-set smartindent
+set smartindent                 " Apply same indent from last row
 set wildmenu                    " Activate automaticaly complement
 set wildmode=list:longest,full  " Open a menu of complement after matching longest
 set tags=./.tags;,.tags;        " Target tags path
@@ -17,34 +44,124 @@ set backspace=2                 " Fix backspace behavior on most terminals.
 set fileformats=unix,dos,mac
 set fileencodings=utf-8,sjis
 set noswapfile                  " No set swap file
-set hlsearch                    " highlight of search
+set hlsearch                    " Highlight of search
 set incsearch                   " Move automaticaly hit word by search
+set ruler                       " Display a place of cursor
+set cmdheight=2                 " Cmd row number
+set laststatus=2                " Display a status line
+set showcmd                     " Display cmd now
+set hidden                      " It can open other file if it exists not saved files
+set list                        " Display a char that is not seeing
+set listchars=tab:>\ ,extends:< " Visualize the continuation of tabs and lines
+set showmatch                   " Show corresponding brackets or braces
+set whichwrap=b,s,h,l,<,>,[,]   " Don't stop the cursor at the beggining of end of a line
 
-colorscheme slate          " Change a colorscheme.
+" Statsu line info
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+" Display a branch of git at status line
+set statusline+=%{fugitive#statusline()}
 
+" undo dir
 set undofile
-if !isdirectory(expand("$HOME/.vim/undodir"))
-    call mkdir(expand("$HOME/.vim/undodir"), "p")
+if !isdirectory(expand("$HOME/.config/nvim/undodir"))
+    call mkdir(expand("$HOME/.config/nvim/undodir"), "p")
 endif
-set undodir=$HOME/.vim/undodir
+set undodir=$HOME/.config/nvim/undodir
 
-packloadall                " Load all plugins
-silent! helptags ALL       " Load help file for all plugings
+packloadall                     " Load all plugins
+silent! helptags ALL            " Load help file for all plugings
 
 " shortcut key to move splited windows
 noremap <c-h> <c-w><c-h>
 noremap <c-j> <c-w><c-j>
-noremap <c-k> <c-w><c-k>
-noremap <c-l> <c-w><c-l>
 
-command! Bd :bp | :sp | :bn | :bd       " Close buffer without closing window
+" Close buffer without closing window
+command! Bd :bp | :sp | :bn | :bd       
 
 " Close automaticaly when a last window is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
     \ b:NERDTree.isTabTree()) | q | endif
 
-nnoremap <C-b> :CtrlPBuffer<cr>         " Mapping `CtrlPBuffer` to Ctrl-b 
+" Mapping `CtrlPBuffer` to Ctrl-b
+nnoremap <C-b> :CtrlPBuffer<cr>        
 
 " Set python path to pass checkhealth in neovim
 let g:python_host_prog=$PYENV_ROOT.'/versions/2.7.15/bin/python'
 let g:python3_host_prog=$PYENV_ROOT.'/versions/3.8.0/bin/python'
+
+
+""""""""""""""""""""""""""""""
+" Setting Unt.vim
+""""""""""""""""""""""""""""""
+" Start insert mode
+let g:unite_enable_start_insert=1
+" List of buffer
+noremap <C-P> :Unite buffer<CR>
+" List of files
+noremap <C-N> :Unite -buffer-name=file file<CR>
+" List of files used recently
+noremap <C-Z> :Unite file_mru<CR>
+" sources is directory where it opend a file now
+noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
+" Split command
+au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+" Vsplit command
+au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+" Quit with ESC & ESC
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+
+
+" https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
+""""""""""""""""""""""""""""""
+" Change color when mode is insert
+""""""""""""""""""""""""""""""
+let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
+
+if has('syntax')
+  augroup InsertHook
+    autocmd!
+    autocmd InsertEnter * call s:StatusLine('Enter')
+    autocmd InsertLeave * call s:StatusLine('Leave')
+  augroup END
+endif
+
+let s:slhlcmd = ''
+function! s:StatusLine(mode)
+  if a:mode == 'Enter'
+    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
+    silent exec g:hi_insert
+  else
+    highlight clear StatusLine
+    silent exec s:slhlcmd
+  endif
+endfunction
+
+function! s:GetHighlight(hi)
+  redir => hl
+  exec 'highlight '.a:hi
+  redir END
+  let hl = substitute(hl, '[\r\n]', '', 'g')
+  let hl = substitute(hl, 'xxx', '', '')
+  return hl
+endfunction
+
+
+""""""""""""""""""""""""""""""
+" Set bracket automaticaly
+""""""""""""""""""""""""""""""
+imap { {}<LEFT>
+imap [ []<LEFT>
+imap ( ()<LEFT>
+
+""""""""""""""""""""""""""""""
+" Start at last cursor place
+""""""""""""""""""""""""""""""
+if has("autocmd")
+    autocmd BufReadPost *
+    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \   exe "normal! g'\"" |
+    \ endif
+endif
