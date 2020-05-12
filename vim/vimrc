@@ -75,7 +75,9 @@ silent! helptags ALL            " Load help file for all plugings
 
 " shortcut key to move splited windows
 noremap <c-h> <c-w><c-h>
+noremap <c-l> <c-w><c-l>
 noremap <c-j> <c-w><c-j>
+noremap <c-k> <c-w><c-k>
 
 " Map-leader
 let mapleader = " "
@@ -94,6 +96,9 @@ nnoremap <C-b> :CtrlPBuffer<cr>
 let g:python_host_prog=$PYENV_ROOT.'/versions/2.7.15/bin/python'
 let g:python3_host_prog=$PYENV_ROOT.'/versions/3.8.0/bin/python'
 
+" Set clang options for vim-clang
+let g:clang_c_options = '-std=c11'
+let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ --pedantic-errors'
 
 """"""""""""""""""""""""""""""
 " Setting Unt.vim
