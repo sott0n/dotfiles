@@ -87,8 +87,11 @@ noremap <c-l> <c-w><c-l>
 noremap <c-j> <c-w><c-j>
 noremap <c-k> <c-w><c-k>
 
-" Map-leader
-let mapleader = " "
+" Map a leader key as Space key
+let mapleader = "\<space>"
+
+" Mapping NERDTreeToggle
+noremap <leader>n :NERDTreeToggle<cr>
 
 " Close buffer without closing window
 command! Bd :bp | :sp | :bn | :bd       
@@ -158,11 +161,14 @@ endfunction
 
 
 """"""""""""""""""""""""""""""
-" Set bracket automaticaly
+" Set bracket or quote automaticaly
 """"""""""""""""""""""""""""""
-imap { {}<LEFT>
-imap [ []<LEFT>
-imap ( ()<LEFT>
+inoremap ' ''<esc>i
+inoremap " ""<esc>i
+inoremap ( ()<esc>i
+inoremap { {}<esc>i
+inoremap [ []<esc>i
+inoremap < <><esc>i
 
 """"""""""""""""""""""""""""""
 " Start at last cursor place
