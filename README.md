@@ -3,12 +3,13 @@ This dotfiles are my personal for system.
 
 ## Lineup
 
-* bash
 * git
 * go
 * homebrew
 * peco
+* python
 * tmux
+* vim(neovim)
 * zsh
 
 ## Author
