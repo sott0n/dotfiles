@@ -168,7 +168,6 @@ inoremap " ""<esc>i
 inoremap ( ()<esc>i
 inoremap { {}<esc>i
 inoremap [ []<esc>i
-inoremap < <><esc>i
 
 """"""""""""""""""""""""""""""
 " Start at last cursor place
