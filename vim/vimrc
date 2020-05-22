@@ -111,6 +111,9 @@ let g:python3_host_prog=$PYENV_ROOT.'/versions/3.8.0/bin/python'
 let g:clang_c_options = '-std=c11'
 let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ --pedantic-errors'
 
+" Change highlight of match paren
+hi MatchParen ctermbg=3
+
 """"""""""""""""""""""""""""""
 " Setting Unt.vim
 """"""""""""""""""""""""""""""
@@ -125,9 +128,9 @@ noremap <C-Z> :Unite file_mru<CR>
 " Sources is directory where it opend a file now
 noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
 
-" https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
 """"""""""""""""""""""""""""""
 " Change color when mode is insert
+" https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
 """"""""""""""""""""""""""""""
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
 
@@ -169,12 +172,17 @@ inoremap ( ()<esc>i
 inoremap { {}<esc>i
 inoremap [ []<esc>i
 
-""""""""""""""""""""""""""""""
 " Start at last cursor place
-""""""""""""""""""""""""""""""
 if has("autocmd")
     autocmd BufReadPost *
     \ if line("'\"") > 0 && line ("'\"") <= line("$") |
     \   exe "normal! g'\"" |
     \ endif
 endif
+
+
+" Start at last cursor place
+augroup ctags
+  autocmd!
+  autocmd BufWritePost * silent !ctags -R -f .tags
+augroup END
