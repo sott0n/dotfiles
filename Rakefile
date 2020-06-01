@@ -64,7 +64,8 @@ end
 namespace :nvim do
   desc "Create symblic link to HOME"
   task :link do
-    same_name_symlinks File.join(PWD, "vimrc"), [".config/nvim/init.vim"]
+    sh "mkdir -p $HOME/.config/nvim/"
+    symlink_ File.join(PWD, "vim/vimrc"), File.join(HOME, ".config/nvim/init.vim")
   end
 end
 
