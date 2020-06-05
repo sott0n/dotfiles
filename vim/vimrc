@@ -1,6 +1,20 @@
-syntax on                               " Enable syntax highlighting.
-highlight LineNr ctermfg=darkyellow     " Color of row numbers    
-colorscheme slate                       " Change a colorscheme.
+" Color scheme
+syntax enable
+colorscheme tender
+
+" set airline
+let g:airline_theme = 'tender'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline_powerline_fonts = 1
+set list          " Display unprintable characters f12 - switches
+set listchars=tab:•\ ,trail:•,extends:»,precedes:« " Unprintable chars mapping
+set laststatus=2
+set showtabline=2
+set t_Co=256
+
+nmap <C-p> <Plug>AirlineSelectPrevTab
+nmap <C-n> <Plug>AirlineSelectNextTab
 
 " Install vim-plug if not yet installed
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
@@ -16,7 +30,10 @@ endif
 """"""""""""""""""""""""""""""
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
+Plug 'jacoborus/tender.vim'
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite.vim'
 Plug 'justmao945/vim-clang'
@@ -38,7 +55,6 @@ call plug#end()
 """"""""""""""""""""""""""""""
 set number                      " Row numbers
 set title                       " File title
-set ambiwidth=double
 set smartindent                 " Apply same indent from last row
 set wildmenu                    " Activate automaticaly complement
 set wildmode=list:longest,full  " Open a menu of complement after matching longest
