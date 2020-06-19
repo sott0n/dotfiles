@@ -13,8 +13,8 @@ set laststatus=2
 set showtabline=2
 set t_Co=256
 
-nmap <C-p> <Plug>AirlineSelectPrevTab
-nmap <C-n> <Plug>AirlineSelectNextTab
+noremap <c-p> <Plug>AirlineSelectPrevTab
+noremap <c-n> <Plug>AirlineSelectNextTab
 
 " Install vim-plug if not yet installed
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
@@ -118,6 +118,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
 
 " Mapping `CtrlPBuffer` to Ctrl-b
 nnoremap <C-b> :CtrlPBuffer<cr>        
+
+" Mapping `No highlight` to double ESC
+nnoremap <ESC><ESC> :nohl<CR>
 
 " Set python path to pass checkhealth in neovim
 let g:python_host_prog=$PYENV_ROOT.'/versions/2.7.15/bin/python'
