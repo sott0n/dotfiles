@@ -10,6 +10,7 @@ This dotfiles are my personal for system.
 * python
 * tmux
 * vim(neovim)
+* wasm
 * zsh
 
 ## Author
