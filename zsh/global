@@ -100,4 +100,8 @@ export CPPFLAGS="-I/usr/local/opt/llvm/include"
 export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$WASMTIME_HOME/bin:$PATH"
 export PATH="$HOME/wasm/wabt/build:$PATH"
+export PATH="$HOME/wasm/emsdk:$PATH"
+export PATH="$HOME/wasm/emsdk/node/12.18.1_64bit/bin:$PATH"
+export PATH="$HOME/wasm/emsdk/python/3.7.4_64bit/bin:$PATH"
+export PATH="$HOME/wasm/emsdk/upstream/emscripten:$PATH"
 
