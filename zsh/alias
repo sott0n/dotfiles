@@ -10,7 +10,6 @@ alias lv8='lv -Ou8'
 alias ag='ag --ignore-dir vendor'
 alias ll='ls -la --color=auto'
 alias grep='grep --color'
-alias ps='ps -auxww --sort=start_time'
 
 # ------------------------------------
 # Git
