@@ -1,9 +1,6 @@
 # ====================================
 # PATH
 # ====================================
-# For macos
-export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
-export MACOSX_DEPLOYMENT_TARGET=10.15
 
 # ------------------------------------
 # General
