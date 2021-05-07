@@ -130,6 +130,10 @@ nnoremap <C-b> :CtrlPBuffer<cr>
 " Mapping `No highlight` to double ESC
 nnoremap <ESC><ESC> :nohl<CR>
 
+" Mapping `:LspDefinition` to jump definition
+nnoremap <expr> <silent> <C-]> execute(':LspDefinition') =~ "not supported" ? "\<C-]>" : ":echo<cr>"
+
+
 " Set python path to pass checkhealth in neovim
 let g:python_host_prog=$PYENV_ROOT.'/versions/2.7.15/bin/python'
 let g:python3_host_prog=$PYENV_ROOT.'/versions/3.8.0/bin/python'
@@ -193,7 +197,6 @@ endfunction
 """"""""""""""""""""""""""""""
 " Set bracket or quote automaticaly
 """"""""""""""""""""""""""""""
-inoremap ' ''<esc>i
 inoremap " ""<esc>i
 inoremap ( ()<esc>i
 inoremap { {}<esc>i
