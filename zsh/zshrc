@@ -110,4 +110,3 @@ test -r /Users/sott0n/.opam/opam-init/init.zsh && . /Users/sott0n/.opam/opam-ini
 
 # Read zsh tools for MacOS 
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
