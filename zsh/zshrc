@@ -108,5 +108,7 @@ esac
 # opam configuration
 test -r /Users/sott0n/.opam/opam-init/init.zsh && . /Users/sott0n/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
-# Read zsh tools for MacOS 
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Read zsh tools from oh-myzsh
+plugins=(
+	zsh-autosuggestions
+)
