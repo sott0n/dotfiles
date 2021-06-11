@@ -73,7 +73,7 @@ _vcs_precmd () { vcs_info }
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd _vcs_precmd 
 PROMPT='%~ %F{yellow}${vcs_info_msg_0_}%f
-%B%F{green}%m:%f 🍻 '
+%B%F{green}%m >%f%b 🍻 '
 ZLE_PROMPT_INDENT=0
 
 # ------------------------------------
