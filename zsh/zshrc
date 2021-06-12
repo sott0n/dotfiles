@@ -86,16 +86,13 @@ case "${OSTYPE}" in
 esac
 
 
-# opam configuration
-test -r /Users/sott0n/.opam/opam-init/init.zsh && . /Users/sott0n/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-# Read zsh tools from oh-myzsh
-plugins=(
-	zsh-autosuggestions
-)
-
 # ------------------------------------
 # Prompt
 # ------------------------------------
+setopt prompt_subst
+setopt prompt_percent
+setopt transient_rprompt
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # Activate starship that is custormize terminal tool
 eval "$(starship init zsh)"
