@@ -72,9 +72,6 @@ _vcs_precmd () { vcs_info }
 
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd _vcs_precmd 
-PROMPT='%~ %F{yellow}${vcs_info_msg_0_}%f
-%B%F{green}%m >%f%b 🍻 '
-ZLE_PROMPT_INDENT=0
 
 # ------------------------------------
 # Read settings
@@ -112,3 +109,6 @@ test -r /Users/sott0n/.opam/opam-init/init.zsh && . /Users/sott0n/.opam/opam-ini
 plugins=(
 	zsh-autosuggestions
 )
+
+# Activate starship that is custormize terminal tool
+eval "$(starship init zsh)"

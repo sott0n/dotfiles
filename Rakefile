@@ -32,7 +32,8 @@ task :setup => [
               "zsh:link",
               "nvim:link",
               "peco:link",
-              "etc:link"]
+              "etc:link",
+              "startship:link"]
 
 namespace :zsh do
   desc "Create symbolic link to HOME/.zshrc"
@@ -62,7 +63,7 @@ namespace :tmux do
 end
 
 namespace :nvim do
-  desc "Create symblic link to HOME"
+  desc "Create symblic link to HOME/.config"
   task :link do
     sh "mkdir -p $HOME/.config/nvim/"
     symlink_ File.join(PWD, "vim/vimrc"), File.join(HOME, ".config/nvim/init.vim")
@@ -70,7 +71,7 @@ namespace :nvim do
 end
 
 namespace :peco do
-  desc "Create symbolic link"
+  desc "Create symbolic link to HOME/.config"
   task :link do
     sh "mkdir -p $HOME/.config/peco/" 
     symlink_ File.join(PWD, "peco/config.json"), File.join(HOME, ".config/peco/config.json")
@@ -81,5 +82,13 @@ namespace :etc do
   task :link do
     etcs  =  Dir.glob("etc" +  "/*").map{|path| File.basename(path)}
     same_name_symlinks File.join(PWD, "etc"), etcs
+  end
+end
+
+namespace :starship do
+  desc "Create symbolic link to HOME/.config"
+  task :link do
+    sh 'sh -c "$(curl -fsSL https://starship.rs/install.sh)"'
+    symlink_ File.join(PWD, "zsh/starship.toml"), File.join(HOME, ".config/starship.toml")
   end
 end

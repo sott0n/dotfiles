@@ -1,0 +1,28 @@
+[package]
+disabled = true
+
+[directory]
+truncate_to_repo = false
+style = "bold #5c91b9"
+
+[character]
+success_symbol = "[❯](bold green) 🍻"
+error_symbol = "[✗](bold red) "
+vicmd_symbol = "[V](bold green)"
+
+[docker_context]
+format = "via [🐋 $context](blue bold)"
+
+[git_status]
+disabled = true
+
+[python]
+pyenv_version_name = true
+# Only use the `python3` binary to get the version.
+python_binary = "python3"
+
+[rust]
+format ="via [Rust $version ](red bold)" 
+
+[cmd_duration]
+disabled = true
