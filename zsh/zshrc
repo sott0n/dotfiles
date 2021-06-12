@@ -58,22 +58,6 @@ setopt auto_pushd
 setopt correct
 
 # ------------------------------------
-# Prompt
-# ------------------------------------
-setopt prompt_subst
-setopt prompt_percent
-setopt transient_rprompt
-
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats '[%b]'
-zstyle ':vcs_info:*' actionformats '[%b|%a]'
-
-_vcs_precmd () { vcs_info }
-
-autoload -Uz add-zsh-hook
-add-zsh-hook precmd _vcs_precmd 
-
-# ------------------------------------
 # Read settings
 # ------------------------------------
 [ -f ~/.dotfiles/zsh/global    ] && source ~/.dotfiles/zsh/global
@@ -110,5 +94,8 @@ plugins=(
 	zsh-autosuggestions
 )
 
+# ------------------------------------
+# Prompt
+# ------------------------------------
 # Activate starship that is custormize terminal tool
 eval "$(starship init zsh)"
