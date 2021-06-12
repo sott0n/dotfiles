@@ -30,6 +30,7 @@ task :setup => [
               "git:link",
               "tmux:link",
               "zsh:link",
+              "zsh:tools",
               "nvim:link",
               "peco:link",
               "etc:link",
@@ -45,6 +46,11 @@ namespace :zsh do
     end
 
     symlink_ File.join(PWD, "zsh/zshrc"), File.join(HOME, ".zshrc")      
+  end
+
+  task :tools do
+    sh "mkdir ~/.zsh"
+    sh "git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions"
   end
 end
 
