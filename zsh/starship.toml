@@ -21,8 +21,5 @@ pyenv_version_name = true
 # Only use the `python3` binary to get the version.
 python_binary = "python3"
 
-[rust]
-format ="via [Rust $version ](red bold)" 
-
 [cmd_duration]
 disabled = true
