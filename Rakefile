@@ -34,7 +34,7 @@ task :setup => [
               "nvim:link",
               "peco:link",
               "etc:link",
-              "startship:link"]
+              "starship:link"]
 
 namespace :zsh do
   desc "Create symbolic link to HOME/.zshrc"
