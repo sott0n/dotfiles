@@ -26,3 +26,6 @@ disabled = true
 
 [username]
 disabled = true
+
+[hostname]
+format =  "[$hostname](bold black) -> "
