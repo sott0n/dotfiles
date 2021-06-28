@@ -23,3 +23,6 @@ python_binary = "python3"
 
 [cmd_duration]
 disabled = true
+
+[username]
+disabled = true
