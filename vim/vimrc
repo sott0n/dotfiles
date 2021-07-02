@@ -1,20 +1,7 @@
 " Color scheme
 syntax enable
-"colorscheme tender
-
-" set airline
-"let g:airline_theme = 'tender'
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#buffer_idx_mode = 1
-"let g:airline_powerline_fonts = 1
-"set list          " Display unprintable characters f12 - switches
-"set listchars=tab:•\ ,trail:•,extends:»,precedes:« " Unprintable chars mapping
-"set laststatus=2
-"set showtabline=2
-"set t_Co=256
-"
-"noremap <c-p> <Plug>AirlineSelectPrevTab
-"noremap <c-n> <Plug>AirlineSelectNextTab
+colorscheme tender
+let g:airline_theme = 'tender'
 
 " Install vim-plug if not yet installed
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
@@ -30,7 +17,6 @@ endif
 """"""""""""""""""""""""""""""
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'jacoborus/tender.vim'
