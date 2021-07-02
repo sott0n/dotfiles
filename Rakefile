@@ -32,6 +32,7 @@ task :setup => [
               "zsh:link",
               "zsh:tools",
               "nvim:link",
+              "nvim:color",
               "peco:link",
               "etc:link",
               "starship:link"]
@@ -73,6 +74,12 @@ namespace :nvim do
   task :link do
     sh "mkdir -p $HOME/.config/nvim/"
     symlink_ File.join(PWD, "vim/vimrc"), File.join(HOME, ".config/nvim/init.vim")
+  end
+
+  task :color do
+    sh "git clone https://github.com/jacoborus/tender.vim.git"
+    sh "mv tender.vim/colors/tender.vim .config/nvim/colors"
+    sh "rm -rf tender.vim"
   end
 end
 
