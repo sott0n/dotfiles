@@ -78,7 +78,8 @@ namespace :nvim do
 
   task :color do
     sh "git clone https://github.com/jacoborus/tender.vim.git"
-    sh "mv tender.vim/colors/tender.vim .config/nvim/colors"
+    sh "mkdir -p $HOME/.config/nvim/colors"
+    sh "mv tender.vim/colors/tender.vim $HOME/.config/nvim/colors"
     sh "rm -rf tender.vim"
   end
 end
