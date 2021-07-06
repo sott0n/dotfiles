@@ -75,6 +75,8 @@ set showmatch                   " Show corresponding brackets or braces
 set whichwrap=b,s,h,l,<,>,[,]   " Don't stop the cursor at the beggining of end of a line
 set clipboard&                  " Set clipboard value of option into default
 set clipboard^=unnamedplus      " Clipboard
+set cmdheight=1                 " Heigh of status line
+
 
 " Statsu line info
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
