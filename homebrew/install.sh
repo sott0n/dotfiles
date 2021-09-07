@@ -47,6 +47,7 @@ packages=(
     git   
     hub 
     tig
+    gh
 
     # Emcas & Vim
     cask

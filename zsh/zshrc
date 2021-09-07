@@ -105,3 +105,6 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Activate starship that is custormize terminal tool
 eval "$(starship init zsh)"
+
+# Completion for github cli
+eval "$(gh completion -s zsh)"
