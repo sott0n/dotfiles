@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt-get install python3-pip npm
+
 pyenv global 2.7.15
 pip install neovim
 
@@ -8,4 +10,4 @@ pip install neovim
 
 gem install neovim
 
-npm install --global neovim
+sudo npm install --global neovim
