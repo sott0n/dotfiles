@@ -1,8 +1,12 @@
 # sott0n does dotfiles
 This dotfiles are my personal for system.
 
-## Lineup
+## Clone
+```
+git clone git@github.com:sott0n/dotfiles.git ~/.dotfiles
+```
 
+## Lineup
 * git
 * go
 * homebrew
