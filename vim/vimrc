@@ -1,7 +1,6 @@
 " Color scheme
 syntax enable
 colorscheme tender
-let g:airline_theme = 'tender'
 
 " Install vim-plug if not yet installed
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
@@ -230,6 +229,11 @@ let g:lsp_settings = {
 \      },
 \      'procMacro': {
 \        'enable': v:true,
+\      },
+\      "diagnostics": {
+\        'disabled': [
+\          'unresolved-import',
+\        ],
 \      },
 \    },
 \  }
