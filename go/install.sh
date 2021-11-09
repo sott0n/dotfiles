@@ -12,7 +12,17 @@ fi
 
 rm -fr ${GOHOME}/pkg
 mkdir -p ${HOME}/.go/${GOVERSION}
-curl https://storage.googleapis.com/golang/go${GOVERSION}.darwin-amd64.tar.gz \
+
+if [ "$(uname)" == 'Darwin' ]; then
+  curl https://storage.googleapis.com/golang/go${GOVERSION}.darwin-amd64.tar.gz \
     | tar xvzf - -C ${HOME}/.go/${GOVERSION}/ --strip-components=1
+elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+  curl https://storage.googleapis.com/golang/go${GOVERSION}.linux-amd64.tar.gz \
+    | tar xvzf - -C ${HOME}/.go/${GOVERSION}/ --strip-components=1
+else
+  echo "Your platform ($(uname -a)) is not supported."
+  exit 1
+fi
+
 echo $GOVERSION > ${HOME}/.go/.goversion
 
