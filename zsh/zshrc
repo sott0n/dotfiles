@@ -94,7 +94,6 @@ if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
 fi
 ssh-add -l >& /dev/null || ssh-add
 
-
 # ------------------------------------
 # Prompt
 # ------------------------------------
@@ -105,6 +104,3 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Activate starship that is custormize terminal tool
 eval "$(starship init zsh)"
-
-export CUDA_HOME=/usr/local/cuda
-export PATH=$PATH:$CUDA_HOME/bin
