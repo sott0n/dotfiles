@@ -1,7 +1,3 @@
-" Color scheme
-syntax enable
-colorscheme tender
-
 " Install vim-plug if not yet installed
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
     silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -18,7 +14,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
-Plug 'jacoborus/tender.vim'
+Plug 'sainnhe/gruvbox-material'
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite.vim'
 Plug 'justmao945/vim-clang'
@@ -41,6 +37,23 @@ Plug 'hrsh7th/vim-vsnip'
 
 " Initialize plugin system
 call plug#end()
+
+""""""""""""""""""""""""""""""
+" Color scheme
+" https://github.com/sainnhe/gruvbox-material/blob/master/doc/gruvbox-material.txt
+""""""""""""""""""""""""""""""
+syntax enable
+if has('termguicolors')
+  set termguicolors
+endif
+" For dark version.
+set background=dark
+" Set contrast.
+" This configuration option should be placed before `colorscheme gruvbox-material`.
+" Available values: 'hard', 'medium'(default), 'soft'
+let g:gruvbox_material_background = 'soft'
+
+colorscheme gruvbox-material
 
 """"""""""""""""""""""""""""""
 " Set parameters
