@@ -104,3 +104,9 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Activate starship that is custormize terminal tool
 eval "$(starship init zsh)"
+
+export CUDA_HOME=/usr/local/cuda
+export PATH=$PATH:$CUDA_HOME/bin
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+export PATH=$PATH:$WASMTIME_HOME/bin
