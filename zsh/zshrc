@@ -2,6 +2,9 @@
 # .zshrc
 # ====================================
 
+# When you profiles zsh start time, remove comment out.
+#zmodload zsh/zprof
+
 # Link vim
 bindkey -v
 
@@ -105,8 +108,10 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Activate starship that is custormize terminal tool
 eval "$(starship init zsh)"
 
-export CUDA_HOME=/usr/local/cuda
-export PATH=$PATH:$CUDA_HOME/bin
 
-export WASMTIME_HOME="$HOME/.wasmtime"
-export PATH=$PATH:$WASMTIME_HOME/bin
+# ------------------------------------
+# When you profiles zsh start time, remove comment out.
+#if (which zprof > /dev/null 3>&1) ;then
+#  zprof
+#fi
+>>>>>>> fcc6a9cd (Update)
