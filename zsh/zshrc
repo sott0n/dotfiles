@@ -114,4 +114,3 @@ eval "$(starship init zsh)"
 #if (which zprof > /dev/null 3>&1) ;then
 #  zprof
 #fi
->>>>>>> fcc6a9cd (Update)
