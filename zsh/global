@@ -96,6 +96,12 @@ export LDFLAGS="-L/usr/local/opt/llvm/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
 # ------------------------------------
+# CUDA
+# ------------------------------------
+export CUDA_HOME=/usr/local/cuda
+export PATH=$PATH:$CUDA_HOME/bin
+
+# ------------------------------------
 # wasm
 #   - wastime
 #   - wabt
