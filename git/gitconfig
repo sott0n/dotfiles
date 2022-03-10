@@ -2,8 +2,8 @@
   path = ~/.gitconfig.local
 
 [user]
-  name = sott0n
-  email = fix7211@gmail.com
+	name = Kohei Yamaguchi
+	email = fix7211@gmail.com
 
 [credential]
   helper = osxkeychain          
@@ -107,4 +107,4 @@
 	process = git-lfs filter-process
 	required = true
 [core]
-	editor = vim
+	editor = vim -c \"set fenc=utf-8\"
