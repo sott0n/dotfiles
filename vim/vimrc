@@ -143,8 +143,10 @@ let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ --pedantic-errors'
 " Change highlight of match paren
 hi MatchParen ctermbg=3
 
+
 """"""""""""""""""""""""""""""
 " Setting Unt.vim
+"
 """"""""""""""""""""""""""""""
 " Start insert mode
 let g:unite_enable_start_insert=1
@@ -157,9 +159,11 @@ noremap <C-Z> :Unite file_mru<CR>
 " Sources is directory where it opend a file now
 noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
 
+
 """"""""""""""""""""""""""""""
 " Change color when mode is insert
-" https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
+"
+"  - https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
 """"""""""""""""""""""""""""""
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
 
@@ -194,6 +198,7 @@ endfunction
 
 """"""""""""""""""""""""""""""
 " Set bracket or quote automaticaly
+"
 """"""""""""""""""""""""""""""
 inoremap " ""<esc>i
 inoremap ( ()<esc>i
@@ -212,6 +217,7 @@ endif
 
 """"""""""""""""""""""""""""""
 " Start at last cursor place
+"
 """"""""""""""""""""""""""""""
 function! s:execute_ctags() abort
   let tag_name = '.tags'
@@ -231,12 +237,21 @@ augroup END
 
 
 """"""""""""""""""""""""""""""
+" Settings for each langs
+"
+""""""""""""""""""""""""""""""
+" For C++
+autocmd FileType cpp setlocal shiftwidth=2
+
+""""""""""""""""""""""""""""""
 " For rust setting
+"
 """"""""""""""""""""""""""""""
 let g:rustfmt_autosave = 1
 
 """"""""""""""""""""""""""""""
 " For lsp settings
+"
 """"""""""""""""""""""""""""""
 let g:lsp_settings = {
 \  'rust-analyzer': {
