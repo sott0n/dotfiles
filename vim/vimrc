@@ -240,8 +240,7 @@ augroup END
 " Settings for each langs
 "
 """"""""""""""""""""""""""""""
-" For C++
-autocmd FileType cpp setlocal shiftwidth=2
+autocmd FileType c,cpp,cmake setlocal shiftwidth=2
 
 """"""""""""""""""""""""""""""
 " For rust setting
