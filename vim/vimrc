@@ -241,6 +241,7 @@ augroup END
 "
 """"""""""""""""""""""""""""""
 autocmd FileType c,cpp,cmake setlocal shiftwidth=2
+autocmd BufEnter *.td setlocal shiftwidth=2
 
 """"""""""""""""""""""""""""""
 " For rust setting
