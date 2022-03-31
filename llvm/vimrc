@@ -264,8 +264,8 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'mattn/vim-lsp-settings'
 Plug 'mattn/vim-lsp-icons'
 Plug 'hrsh7th/vim-vsnip'
+Plug 'sheerun/vim-polyglot'
 
-" Initialize plugin system
 call plug#end()
 
 " shortcut key to move splited windows
