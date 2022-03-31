@@ -39,11 +39,11 @@ fi
 # ------------------------------------
 # Go
 # ------------------------------------
-export GOVERSION=$(cat ${HOME}/.go/.goversion)
-export GOROOT=${HOME}/.go/${GOVERSION}
-export GOPATH=${HOME}
-export PATH=${GOROOT}/bin:${GOPATH}/bin:${PATH}
-export PATH=$GOPATH/src/github.com/uber/go-torch/FlameGraph:$PATH
+#export GOVERSION=$(cat ${HOME}/.go/.goversion)
+#export GOROOT=${HOME}/.go/${GOVERSION}
+#export GOPATH=${HOME}
+#export PATH=${GOROOT}/bin:${GOPATH}/bin:${PATH}
+#export PATH=$GOPATH/src/github.com/uber/go-torch/FlameGraph:$PATH
 
 # ------------------------------------
 # Python
@@ -76,8 +76,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # ------------------------------------
 # OCaml
 # ------------------------------------
-export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/Users/sott0n/include/
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+#export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/Users/sott0n/include/
+#export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 # ------------------------------------
 # peco
@@ -91,15 +91,15 @@ bindkey '^x' peco-kubectx
 # ------------------------------------
 # llvm
 # ------------------------------------
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/llvm/lib"
-export CPPFLAGS="-I/usr/local/opt/llvm/include"
+#export PATH="/usr/local/opt/llvm/bin:$PATH"
+#export LDFLAGS="-L/usr/local/opt/llvm/lib"
+#export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
 # ------------------------------------
 # CUDA
 # ------------------------------------
-export CUDA_HOME=/usr/local/cuda
-export PATH=$PATH:$CUDA_HOME/bin
+#export CUDA_HOME=/usr/local/cuda
+#export PATH=$PATH:$CUDA_HOME/bin
 
 # ------------------------------------
 # wasm
@@ -107,11 +107,11 @@ export PATH=$PATH:$CUDA_HOME/bin
 #   - wabt
 #   - emscripten
 # ------------------------------------
-export WASMTIME_HOME="$HOME/.wasmtime"
-export PATH="$WASMTIME_HOME/bin:$PATH"
-export PATH="$HOME/.wabt/bin:$PATH"
-export PATH="$HOME/emsdk:$PATH"
-export PATH="$HOME/emsdk/node/12.18.1_64bit/bin:$PATH"
-export PATH="$HOME/emsdk/python/3.7.4_64bit/bin:$PATH"
-export PATH="$HOME/emsdk/upstream/emscripten:$PATH"
+#export WASMTIME_HOME="$HOME/.wasmtime"
+#export PATH="$WASMTIME_HOME/bin:$PATH"
+#export PATH="$HOME/.wabt/bin:$PATH"
+#export PATH="$HOME/emsdk:$PATH"
+#export PATH="$HOME/emsdk/node/12.18.1_64bit/bin:$PATH"
+#export PATH="$HOME/emsdk/python/3.7.4_64bit/bin:$PATH"
+#export PATH="$HOME/emsdk/upstream/emscripten:$PATH"
 
