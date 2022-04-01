@@ -231,7 +231,6 @@ set omnifunc=ClangComplete
 """"""""""""""""""""""""""""""
 " Optional Settings from own vimrc
 "
-""""""""""""""""""""""""""""""
 
 " Install vim-plug if not yet installed
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
@@ -247,7 +246,6 @@ endif
 """"""""""""""""""""""""""""""
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'sainnhe/gruvbox-material'
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite.vim'
 Plug 'justmao945/vim-clang'
@@ -267,6 +265,15 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'sheerun/vim-polyglot'
 
 call plug#end()
+
+""""""""""""""""""""""""""""""
+" Set parameters
+""""""""""""""""""""""""""""""
+set number                      " Row numbers
+set autoindent                  " Respect indentation when starting a new line.
+set title                       " File title
+set wildmenu                    " Activate automaticaly complement
+set tags=./.tags;,.tags;        " Target tags path
 
 " shortcut key to move splited windows
 noremap <c-h> <c-w><c-h>
