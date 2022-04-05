@@ -54,6 +54,7 @@ setopt auto_cd
 # Auto directory pushd
 # that you can get dirs list by cd -[tab]
 setopt auto_pushd
+setopt pushd_ignore_dups
 
 # ------------------------------------
 # Correct miss typing command
