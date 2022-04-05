@@ -102,7 +102,7 @@ bindkey '^x' peco-kubectx
 #export PATH=$PATH:$CUDA_HOME/bin
 
 # ------------------------------------
-# wasm
+# Wasm
 #   - wastime
 #   - wabt
 #   - emscripten
@@ -114,4 +114,3 @@ bindkey '^x' peco-kubectx
 #export PATH="$HOME/emsdk/node/12.18.1_64bit/bin:$PATH"
 #export PATH="$HOME/emsdk/python/3.7.4_64bit/bin:$PATH"
 #export PATH="$HOME/emsdk/upstream/emscripten:$PATH"
-
