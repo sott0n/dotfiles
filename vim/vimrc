@@ -13,7 +13,7 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
-Plug 'sainnhe/gruvbox-material'
+Plug 'ulwlu/elly.vim'
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite.vim'
 Plug 'justmao945/vim-clang'
@@ -38,21 +38,15 @@ Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 """"""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
 " Color scheme
-" https://github.com/sainnhe/gruvbox-material/blob/master/doc/gruvbox-material.txt
+" https://github.com/ulwlu/elly.vim
 """"""""""""""""""""""""""""""
 syntax enable
 if has('termguicolors')
   set termguicolors
 endif
-" For dark version.
-set background=dark
-" Set contrast.
-" This configuration option should be placed before `colorscheme gruvbox-material`.
-" Available values: 'hard', 'medium'(default), 'soft'
-let g:gruvbox_material_background = 'soft'
-
-colorscheme gruvbox-material
+colorscheme elly
 
 """"""""""""""""""""""""""""""
 " Set parameters

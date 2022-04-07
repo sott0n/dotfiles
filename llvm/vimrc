@@ -263,8 +263,19 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'mattn/vim-lsp-icons'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'sheerun/vim-polyglot'
+Plug 'ulwlu/elly.vim'
 
 call plug#end()
+
+""""""""""""""""""""""""""""""
+" Color scheme
+" https://github.com/ulwlu/elly.vim
+""""""""""""""""""""""""""""""
+syntax enable
+if has('termguicolors')
+  set termguicolors
+endif
+colorscheme elly
 
 """"""""""""""""""""""""""""""
 " Set parameters
