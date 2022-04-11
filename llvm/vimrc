@@ -264,6 +264,7 @@ Plug 'mattn/vim-lsp-icons'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'sheerun/vim-polyglot'
 Plug 'ulwlu/elly.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
@@ -333,3 +334,19 @@ let g:lsp_settings = {
 \    'cmd': ['clangd-12']
 \  },
 \}
+
+""""""""""""""""""""""""""""""
+" Setting tree-sitter
+"
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "c", "cpp", "rust" },
+  sync_install = false,
+  highlight = {
+    enable = true,
+  },
+  indent = {
+    enable = true,
+  }
+}
+EOF
