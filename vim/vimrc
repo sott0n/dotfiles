@@ -44,10 +44,10 @@ call plug#end()
 " https://github.com/ulwlu/elly.vim
 """"""""""""""""""""""""""""""
 syntax enable
+colorscheme elly
 if has('termguicolors')
   set termguicolors
 endif
-colorscheme elly
 
 """"""""""""""""""""""""""""""
 " Set parameters
@@ -199,7 +199,6 @@ inoremap " ""<esc>i
 inoremap ( ()<esc>i
 inoremap { {}<esc>i
 inoremap [ []<esc>i
-inoremap < <><esc>i
 
 " Start at last cursor place
 if has("autocmd")
