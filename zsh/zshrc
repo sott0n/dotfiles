@@ -109,9 +109,9 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Activate starship that is custormize terminal tool
 eval "$(starship init zsh)"
 
-
 # ------------------------------------
 # When you profiles zsh start time, remove comment out.
 #if (which zprof > /dev/null 3>&1) ;then
 #  zprof
 #fi
+#
