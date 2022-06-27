@@ -35,6 +35,7 @@ Plug 'mattn/vim-lsp-icons'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'https://github.com/adamheins/vim-highlight-match-under-cursor'
 
 call plug#end()
 
@@ -268,7 +269,14 @@ let g:lsp_settings = {
 \  },
 \  'efm-langserver': {
 \    'disabled': v:false
-\  }
+\  },
+\  'pylsp-all': {
+\    'workspace_config': {
+\      'pylsp': {
+\        'configurationSources': ['flake8']
+\      }
+\    }
+\  },
 \}
 
 """"""""""""""""""""""""""""""
