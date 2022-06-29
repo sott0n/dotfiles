@@ -27,20 +27,27 @@ CLEAN.concat(cleans.map{|c| File.join(HOME,c)})
 
 task :default => :setup
 task :setup => [
-              "git:link",
-              "tmux:link",
+              "zsh:install",
               "zsh:link",
               "zsh:tools",
+              "git:tool",
+              "git:link",
+              "tmux:install",
+              "tmux:link",
+              "nvim:install",
               "nvim:link",
               "nvim:color",
+              "peco:install",
               "peco:link",
               "etc:link",
               "starship:link"]
 
 namespace :zsh do
-  desc "Create symbolic link to HOME/.zshrc"
+  desc "Install & Create symbolic link to HOME/.zshrc"
+  task :install do
+    sh "bash ./zsh/install.sh"
+  end
   task :link do
-
     # If `.zshrc` is already exist, backup it
     if File.exist?(File.join(HOME, ".zshrc")) && !File.symlink?(File.join(HOME, ".zshrc"))
       mv File.join(HOME, ".zshrc"), File.join(HOME, ".zshrc.org")
@@ -48,7 +55,6 @@ namespace :zsh do
 
     symlink_ File.join(PWD, "zsh/zshrc"), File.join(HOME, ".zshrc")      
   end
-
   task :tools do
     sh "mkdir ~/.zsh"
     sh "git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions"
@@ -56,36 +62,45 @@ namespace :zsh do
 end
 
 namespace :git do
-  desc "Create symbolic link to HOME"
+  desc "Install tools & Create symbolic link to HOME"
+  task :tool do
+    sh "bash ./git/install_tools.sh"
+  end
   task :link do    
     same_name_symlinks File.join(PWD, "git"), ["gitconfig", "gitignore.global"]
   end
 end
 
 namespace :tmux do  
-  desc "Create symblic link to HOME"
+  desc "Install & Create symblic link to HOME"
+  task :install do
+    sh "bash ./tmux/install.sh"
+    sh "bash ./tmux/init.sh"
+  end
   task :link do
     same_name_symlinks File.join(PWD, "tmux"), ["tmux.conf"]
   end
 end
 
 namespace :nvim do
-  desc "Create symblic link to HOME/.config"
+  desc "Install & Create symblic link to HOME/.config"
+  task :install do
+    sh 'bash ./vim/install.sh'
+  end
   task :link do
     sh "mkdir -p $HOME/.config/nvim/"
     symlink_ File.join(PWD, "vim/vimrc"), File.join(HOME, ".config/nvim/init.vim")
   end
-
   task :color do
-    sh "git clone https://github.com/jacoborus/tender.vim.git"
-    sh "mkdir -p $HOME/.config/nvim/colors"
-    sh "mv tender.vim/colors/tender.vim $HOME/.config/nvim/colors"
-    sh "rm -rf tender.vim"
+    sh "bash ./vim/color.sh"
   end
 end
 
 namespace :peco do
-  desc "Create symbolic link to HOME/.config"
+  desc "Install & Create symbolic link to HOME/.config"
+  task :install do
+    sh "bash ./peco/install.sh"
+  end
   task :link do
     sh "mkdir -p $HOME/.config/peco/" 
     symlink_ File.join(PWD, "peco/config.json"), File.join(HOME, ".config/peco/config.json")
