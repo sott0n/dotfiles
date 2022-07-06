@@ -34,7 +34,7 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'mattn/vim-lsp-icons'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'sheerun/vim-polyglot'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', }
 Plug 'https://github.com/adamheins/vim-highlight-match-under-cursor'
 
 call plug#end()
@@ -284,7 +284,7 @@ let g:lsp_settings = {
 "
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "cpp", "rust" },
+  ensure_installed = { "c", "cpp", "rust", "cmake", "llvm", "python" },
   sync_install = false,
   highlight = {
     enable = true,
@@ -294,3 +294,14 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 EOF
+
+" Advanced setting for mlir tree-sitter.
+"
+"local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+"parser_config.mlir = {
+"  install_info = {
+"    url = "~/.dotfiles/vim/tree-sitter-mlir/",
+"    files = {"src/parser.c"},
+"  },
+"  filetype = "mlir",
+"}
