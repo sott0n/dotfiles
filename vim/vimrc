@@ -36,6 +36,7 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', }
 Plug 'https://github.com/adamheins/vim-highlight-match-under-cursor'
+Plug 'rhysd/vim-clang-format'
 
 call plug#end()
 
