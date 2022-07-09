@@ -38,6 +38,12 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', }
 Plug 'https://github.com/adamheins/vim-highlight-match-under-cursor'
 Plug 'rhysd/vim-clang-format'
 
+" For llvm/mlir
+" https://github.com/llvm/llvm-project/tree/main/llvm/utils/vim
+" https://github.com/llvm/llvm-project/tree/main/mlir/utils/vim
+Plug '~/.config/nvim/plugged/llvm'
+Plug '~/.config/nvim/plugged/mlir'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""
