@@ -57,4 +57,4 @@ alias bd='bosh-deploy.sh'
 # Vim
 # ------------------------------------
 alias vim='nvim'
-alias lvim='nvim -u ~/.dotfiles/llvm/vimrc'
+alias lvim='nvim -u ~/.dotfiles/llvm/vim/vimrc'
