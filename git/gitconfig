@@ -5,9 +5,6 @@
     name = Kohei Yamaguchi
     email = fix7211@gmail.com
 
-[credential]
-    helper = osxkeychain          
-  
 [core]
     pager = delta
     editor = vim -c \"set fenc=utf-8\"
@@ -123,3 +120,6 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
+
+[credential]
+    helper = store
