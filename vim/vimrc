@@ -81,6 +81,7 @@ set ruler                       " Display a place of cursor
 set cmdheight=2                 " Cmd row number
 set laststatus=2                " Display a status line
 set showcmd                     " Display cmd now
+set cursorline                  " Display cursor row
 set hidden                      " It can open other file if it exists not saved files
 set list                        " Display a char that is not seeing
 set listchars=tab:>\ ,extends:< " Visualize the continuation of tabs and lines
