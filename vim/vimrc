@@ -39,6 +39,8 @@ Plug 'https://github.com/adamheins/vim-highlight-match-under-cursor'
 Plug 'rhysd/vim-clang-format'
 Plug 'zefei/vim-wintabs'
 Plug 'zefei/vim-wintabs-powerline'
+Plug 'rhysd/vim-clang-format'
+
 
 " For llvm/mlir
 " https://github.com/llvm/llvm-project/tree/main/llvm/utils/vim
@@ -146,6 +148,8 @@ let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ --pedantic-errors'
 " Change highlight of match paren
 hi MatchParen ctermbg=3
 
+" Clang-Format Setting
+autocmd FileType c ClangFormatAutoEnable
 
 """"""""""""""""""""""""""""""
 " Tab binding
@@ -302,6 +306,10 @@ let g:lsp_settings = {
 \    }
 \  },
 \}
+
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_virtual_text_enabled = 0
+let g:lsp_diagnostics_highlights_enabled = 0
 
 """"""""""""""""""""""""""""""
 " Setting tree-sitter
