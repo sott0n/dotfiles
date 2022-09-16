@@ -37,6 +37,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', }
 Plug 'https://github.com/adamheins/vim-highlight-match-under-cursor'
 Plug 'rhysd/vim-clang-format'
+Plug 'zefei/vim-wintabs'
+Plug 'zefei/vim-wintabs-powerline'
 
 " For llvm/mlir
 " https://github.com/llvm/llvm-project/tree/main/llvm/utils/vim
@@ -47,12 +49,10 @@ Plug '~/.config/nvim/plugged/mlir'
 call plug#end()
 
 """"""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""
 " Color scheme
-" https://github.com/ulwlu/elly.vim
 """"""""""""""""""""""""""""""
 syntax enable
-colorscheme elly
+colorscheme murphy
 if has('termguicolors')
   set termguicolors
 endif
@@ -81,7 +81,6 @@ set ruler                       " Display a place of cursor
 set cmdheight=2                 " Cmd row number
 set laststatus=2                " Display a status line
 set showcmd                     " Display cmd now
-set cursorline                  " Display cursor row
 set hidden                      " It can open other file if it exists not saved files
 set list                        " Display a char that is not seeing
 set listchars=tab:>\ ,extends:< " Visualize the continuation of tabs and lines
@@ -146,6 +145,23 @@ let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ --pedantic-errors'
 
 " Change highlight of match paren
 hi MatchParen ctermbg=3
+
+
+""""""""""""""""""""""""""""""
+" Tab binding
+"
+""""""""""""""""""""""""""""""
+let g:wintabs_autoclose_vim = 1
+map <C-t>j <Plug>(wintabs_previous)
+map <C-t>l <Plug>(wintabs_next)
+map <C-t>c <Plug>(wintabs_close)
+map <C-t>u <Plug>(wintabs_undo)
+map <C-t>o <Plug>(wintabs_only)
+map <C-w>c <Plug>(wintabs_close_window)
+map <C-w>o <Plug>(wintabs_only_window)
+command! Tabc WintabsCloseVimtab
+command! Tabo WintabsOnlyVimtab
+
 
 
 """"""""""""""""""""""""""""""
