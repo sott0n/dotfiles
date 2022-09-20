@@ -22,7 +22,6 @@ Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'junegunn/vim-easy-align'
 Plug 'honza/vim-snippets'
-Plug 'scrooloose/nerdtree'
 Plug 'fatih/vim-go'
 Plug 'nsf/gocode'
 Plug 'easymotion/vim-easymotion'
@@ -40,6 +39,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'zefei/vim-wintabs'
 Plug 'zefei/vim-wintabs-powerline'
 Plug 'rhysd/vim-clang-format'
+Plug 'lambdalisue/fern.vim'
 
 
 " For llvm/mlir
@@ -149,14 +149,14 @@ let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ --pedantic-errors'
 hi MatchParen ctermbg=3
 
 " Clang-Format Setting
-autocmd FileType c ClangFormatAutoEnable
+autocmd FileType c,cpp ClangFormatAutoEnable
 
 """"""""""""""""""""""""""""""
 " Tab binding
 "
 """"""""""""""""""""""""""""""
 let g:wintabs_autoclose_vim = 1
-map <C-t>j <Plug>(wintabs_previous)
+map <C-t>h <Plug>(wintabs_previous)
 map <C-t>l <Plug>(wintabs_next)
 map <C-t>c <Plug>(wintabs_close)
 map <C-t>u <Plug>(wintabs_undo)
