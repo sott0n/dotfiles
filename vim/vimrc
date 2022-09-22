@@ -41,7 +41,6 @@ Plug 'zefei/vim-wintabs-powerline'
 Plug 'rhysd/vim-clang-format'
 Plug 'lambdalisue/fern.vim'
 
-
 " For llvm/mlir
 " https://github.com/llvm/llvm-project/tree/main/llvm/utils/vim
 " https://github.com/llvm/llvm-project/tree/main/mlir/utils/vim
@@ -58,6 +57,8 @@ colorscheme murphy
 if has('termguicolors')
   set termguicolors
 endif
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
 
 """"""""""""""""""""""""""""""
 " Set parameters
