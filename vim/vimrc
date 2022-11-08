@@ -53,11 +53,10 @@ call plug#end()
 " Color scheme
 """"""""""""""""""""""""""""""
 syntax enable
-colorscheme murphy
+colorscheme elly
 if has('termguicolors')
   set termguicolors
 endif
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 
 """"""""""""""""""""""""""""""
