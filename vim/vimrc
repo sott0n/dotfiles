@@ -13,7 +13,6 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
-Plug 'ulwlu/elly.vim'
 Plug 'Shougo/neomru.vim'
 Plug 'Shougo/unite.vim'
 Plug 'justmao945/vim-clang'
@@ -53,11 +52,10 @@ call plug#end()
 " Color scheme
 """"""""""""""""""""""""""""""
 syntax enable
-colorscheme elly
+colorscheme slate
 if has('termguicolors')
   set termguicolors
 endif
-
 
 """"""""""""""""""""""""""""""
 " Set parameters
@@ -92,9 +90,6 @@ set clipboard&                  " Set clipboard value of option into default
 set clipboard^=unnamedplus      " Clipboard
 set cmdheight=1                 " Heigh of status line
 set cursorline
-
-" Cursor highlight
-highlight CursorLine guibg=#282A3A
 
 " Statsu line info
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
