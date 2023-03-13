@@ -1,7 +1,7 @@
 # ====================================
 # General
 # ====================================
-export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
 
 # ====================================
 # Alias
@@ -13,8 +13,8 @@ alias la="ls -A --color"
 # ====================================
 # Rmtrash
 # ====================================
-alias rm='rmtrash'
-alias rr='rmtrash *~'
+alias rm='trash -F'
+alias rr='trash -F *~'
 
 # ====================================
 # Homebrew setting between x86 and arm
