@@ -7,7 +7,7 @@ if ! [ -d "$DIRECTORY" ]; then
 fi
 
 # Install checksec.sh
-if ! [ -L "/usr/local/bin/checksec"]; then
+if ! [ -L "/usr/local/bin/checksec" ]; then
     git clone git@github.com:slimm609/checksec.sh.git ~/.ctf/checksec.sh
     sudo ln -s ~/.ctf/checksec.sh/checksec /usr/local/bin/checksec
     echo "DONE! checksec is installed!!"
@@ -18,5 +18,6 @@ git clone https://github.com/longld/peda.git ~/.ctf/peda
 echo "source ~/.ctf/peda/peda.py" >> ~/.gdbinit
 echo "DONE! peda is installed!!"
 
-# Install ropper
-pip install ropper
+# Install python libraries
+pip install ropper angr z3-solver
+
