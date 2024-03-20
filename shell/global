@@ -80,20 +80,11 @@ export PATH="$HOME/.cargo/bin:$PATH"
 #export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 # ------------------------------------
-# peco
-# ------------------------------------
-for f (~/.dotfiles/peco/*.zsh) source "${f}"
-bindkey '^r' peco-select-history
-bindkey '^j' peco-ghq
-bindkey '^b' peco-git-branch-checkout
-bindkey '^x' peco-kubectx
-
-# ------------------------------------
 # llvm
 # ------------------------------------
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/llvm/lib"
-export CPPFLAGS="-I/usr/local/opt/llvm/include"
+#export PATH="/usr/local/opt/llvm/bin:$PATH"
+#export LDFLAGS="-L/usr/local/opt/llvm/lib"
+#export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
 # ------------------------------------
 # CUDA
@@ -101,16 +92,3 @@ export CPPFLAGS="-I/usr/local/opt/llvm/include"
 #export CUDA_HOME=/usr/local/cuda
 #export PATH=$PATH:$CUDA_HOME/bin
 
-# ------------------------------------
-# Wasm
-#   - wastime
-#   - wabt
-#   - emscripten
-# ------------------------------------
-#export WASMTIME_HOME="$HOME/.wasmtime"
-#export PATH="$WASMTIME_HOME/bin:$PATH"
-#export PATH="$HOME/.wabt/bin:$PATH"
-#export PATH="$HOME/emsdk:$PATH"
-#export PATH="$HOME/emsdk/node/12.18.1_64bit/bin:$PATH"
-#export PATH="$HOME/emsdk/python/3.7.4_64bit/bin:$PATH"
-#export PATH="$HOME/emsdk/upstream/emscripten:$PATH"
