@@ -16,6 +16,7 @@ def same_name_symlinks root, files
 end
 
 cleans = [
+          ".bashrc",
           ".zshrc",
           ".tmux.conf",
           ".gitconfig",
@@ -27,6 +28,7 @@ CLEAN.concat(cleans.map{|c| File.join(HOME,c)})
 
 task :default => :setup
 task :setup => [
+              "bash:link",
               "zsh:install",
               "zsh:link",
               "zsh:tools",
@@ -42,10 +44,22 @@ task :setup => [
               "etc:link",
               "starship:link"]
 
+namespace :bash do
+  desc "Create symbolic link to HOME/.bashrc"
+  task :link do
+    # If `.bashrc` is already exist, backup it
+    if File.exist?(File.join(HOME, ".zshrc")) && !File.symlink?(File.join(HOME, ".zshrc"))
+      rm File.join(HOME, ".zshrc")
+    end
+
+    symlink_ File.join(PWD, "shell/bash/bashrc"), File.join(HOME, ".bashrc")
+  end
+end
+
 namespace :zsh do
   desc "Install & Create symbolic link to HOME/.zshrc"
   task :install do
-    sh "bash ./zsh/install.sh"
+    sh "bash ./shell/zsh/install.sh"
   end
   task :link do
     # If `.zshrc` is already exist, backup it
@@ -53,8 +67,8 @@ namespace :zsh do
       mv File.join(HOME, ".zshrc"), File.join(HOME, ".zshrc.org")
     end
 
-    symlink_ File.join(PWD, "zsh/zshrc"), File.join(HOME, ".zshrc")
-    symlink_ File.join(PWD, "zsh/zlogout"), File.join(HOME, ".zlogout")
+    symlink_ File.join(PWD, "shell/zsh/zshrc"), File.join(HOME, ".zshrc")
+    symlink_ File.join(PWD, "shell/zsh/zlogout"), File.join(HOME, ".zlogout")
   end
   task :tools do
     sh "mkdir ~/.zsh"

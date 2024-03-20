@@ -111,7 +111,17 @@ eval "$(starship init zsh)"
 
 # ------------------------------------
 # When you profiles zsh start time, remove comment out.
+# ------------------------------------
 #if (which zprof > /dev/null 3>&1) ;then
 #  zprof
 #fi
-#
+
+# ------------------------------------
+# peco
+# ------------------------------------
+for f (~/.dotfiles/peco/*.zsh) source "${f}"
+bindkey '^r' peco-select-history
+bindkey '^j' peco-ghq
+bindkey '^b' peco-git-branch-checkout
+bindkey '^x' peco-kubectx
+
