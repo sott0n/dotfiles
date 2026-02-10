@@ -43,3 +43,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # Run home-manager
 nix run home-manager -- switch --flake "$SCRIPT_DIR/nix#$TARGET" -b backup
+
+echo ""
+echo -e "\033[32mConfiguration applied successfully!\033[0m"
+echo -e "Run '\033[33msource ~/.bashrc\033[0m' or start a new terminal to apply changes."
