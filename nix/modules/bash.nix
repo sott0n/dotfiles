@@ -112,8 +112,12 @@
           fi
       }
 
-      # Peco keybindings (requires bash 4.0+)
+      # Keybindings (requires bash 4.0+)
       if [ "''${BASH_VERSINFO[0]}" -ge 4 ]; then
+          # Restore Ctrl+L clear screen (disabled by vi mode)
+          bind '"\C-l": clear-screen'
+
+          # Peco keybindings
           bind -x '"\C-r": peco-select-history'
           bind -x '"\C-j": peco-ghq'
           bind -x '"\C-b": peco-git-branch-checkout'

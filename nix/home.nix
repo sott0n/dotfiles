@@ -15,6 +15,11 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # PATH additions
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
+
   # Environment variables
   home.sessionVariables = {
     EDITOR = "nvim";
