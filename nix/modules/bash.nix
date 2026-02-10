@@ -78,7 +78,7 @@
           local cmd=$(history | tac | sed 's/^[ ]*[0-9]*[ ]*//' | grep -v "^ls" | peco --query "$READLINE_LINE")
           if [ -n "$cmd" ]; then
               READLINE_LINE="$cmd"
-              READLINE_POINT=${#cmd}
+              READLINE_POINT=''${#cmd}
           fi
       }
 
@@ -113,7 +113,7 @@
       }
 
       # Peco keybindings (requires bash 4.0+)
-      if [ "${BASH_VERSINFO[0]}" -ge 4 ]; then
+      if [ "''${BASH_VERSINFO[0]}" -ge 4 ]; then
           bind -x '"\C-r": peco-select-history'
           bind -x '"\C-j": peco-ghq'
           bind -x '"\C-b": peco-git-branch-checkout'
