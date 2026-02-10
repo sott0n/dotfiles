@@ -40,7 +40,6 @@
       Plug 'mattn/vim-lsp-icons'
       Plug 'hrsh7th/vim-vsnip'
       Plug 'sheerun/vim-polyglot'
-      Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', }
       Plug 'https://github.com/adamheins/vim-highlight-match-under-cursor'
       Plug 'rhysd/vim-clang-format'
       Plug 'zefei/vim-wintabs'
@@ -282,21 +281,6 @@
       let g:lsp_diagnostics_virtual_text_enabled = 0
       let g:lsp_diagnostics_highlights_enabled = 0
 
-      """"""""""""""""""""""""""""""
-      " Tree-sitter settings
-      """"""""""""""""""""""""""""""
-      lua <<EOF
-      require'nvim-treesitter.configs'.setup {
-        ensure_installed = { "c", "cpp", "rust", "cmake", "llvm", "python" },
-        sync_install = false,
-        highlight = {
-          enable = true,
-        },
-        indent = {
-          enable = true,
-        }
-      }
-      EOF
     '';
   };
 }
