@@ -37,7 +37,7 @@ nix flake check ./nix
   - `modules/zsh.nix` - Zsh config with peco integration
   - `modules/tmux.nix` - Tmux config (prefix: C-a)
   - `modules/neovim.nix` - Neovim config with vim-plug
-- `shell/`, `git/`, `tmux/`, `vim/`, `peco/` - Legacy configs (reference only)
+- `scripts/` - AI agent installation scripts
 
 ## Key Keybindings
 
