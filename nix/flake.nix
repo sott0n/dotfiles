@@ -18,7 +18,7 @@
             ./home.nix
             ./modules/packages.nix
             ./modules/git.nix
-            ./modules/zsh.nix
+            ./modules/bash.nix
             ./modules/tmux.nix
             ./modules/neovim.nix
           ] ++ extraModules;
