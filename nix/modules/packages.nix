@@ -31,5 +31,9 @@
     curl
     wget
     tree
+
+    # AI Agent tools
+    gh        # GitHub CLI (for gh auth, gh copilot, etc.)
+    nodejs    # Node.js (for npm-based CLI tools like @openai/codex)
   ];
 }

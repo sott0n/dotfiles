@@ -68,4 +68,19 @@ Use `~/.localrc` for settings not tracked in git (e.g., work-specific configs).
 ## Language Environments
 
 - Python: managed with `uv` (installed via Nix)
+- Node.js: managed with Nix (for npm-based CLI tools)
 - Other languages: configure in `~/.localrc` or add to Nix config
+
+## AI Agent Tools
+
+Prerequisites installed via Nix: `gh` (GitHub CLI), `nodejs`
+
+```bash
+# Install all AI agent tools
+./scripts/install-ai-agents.sh
+
+# Then authenticate each tool
+claude login       # Claude Code
+codex --login      # OpenAI Codex
+gh auth login      # GitHub CLI
+```
