@@ -9,7 +9,6 @@ git clone git@github.com:sott0n/dotfiles.git ~/.dotfiles
 ## Lineup
 * bash
 * git
-* go
 * homebrew
 * peco
 * python
