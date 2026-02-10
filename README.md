@@ -10,27 +10,23 @@ Personal dotfiles managed with **Nix + home-manager + Flakes**.
 curl -L https://nixos.org/nix/install | sh
 ```
 
-### 2. Clone
+### 2. Clone & Setup
 
 ```bash
 git clone git@github.com:sott0n/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
+./setup.sh  # Auto-detects OS
 ```
 
-### 3. Apply configuration
+Or specify target manually:
 
 ```bash
-# Linux
-nix run home-manager -- switch --flake ./nix#kyamaguchi@linux -b backup
-
-# macOS (Apple Silicon)
-nix run home-manager -- switch --flake ./nix#kyamaguchi@macbook -b backup
-
-# macOS (Intel)
-nix run home-manager -- switch --flake ./nix#kyamaguchi@macbook-intel -b backup
+./setup.sh linux         # Linux
+./setup.sh darwin        # macOS (Apple Silicon)
+./setup.sh darwin-intel  # macOS (Intel)
 ```
 
-### 4. After changes
+### 3. After changes
 
 ```bash
 home-manager switch --flake ./nix#kyamaguchi@linux
