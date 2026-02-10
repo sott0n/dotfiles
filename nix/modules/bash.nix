@@ -27,7 +27,7 @@
       grep = "grep --color";
 
       # Nix dev environments
-      nix-tt-mlir = "nix run ~/dotfiles/tt/tt-mlir";
+      nix-tt-mlir = "nix run ~/.dotfiles/tt/tt-mlir";
 
       # Git
       gs = "git status";
