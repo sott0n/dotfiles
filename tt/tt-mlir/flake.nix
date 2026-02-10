@@ -80,6 +80,7 @@
           ];
 
           profile = ''
+            export NIX_SHELL_NAME="tt-mlir-dev"
             export TTMLIR_TOOLCHAIN_DIR=''${TTMLIR_TOOLCHAIN_DIR:-$HOME/.ttmlir-toolchain}
             mkdir -p "$TTMLIR_TOOLCHAIN_DIR"
 
