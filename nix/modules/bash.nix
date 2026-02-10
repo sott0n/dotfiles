@@ -59,7 +59,13 @@
       # ------------------------------------
       # Prompt settings
       # ------------------------------------
-      PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+      # Show Nix shell name in prompt if inside a Nix environment
+      __nix_shell_prompt() {
+        if [ -n "$NIX_SHELL_NAME" ]; then
+          echo "($NIX_SHELL_NAME) "
+        fi
+      }
+      PS1='\[\033[01;35m\]$(__nix_shell_prompt)\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
       # ------------------------------------
       # SSH-Agent
