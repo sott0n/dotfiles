@@ -31,6 +31,7 @@
     curl
     wget
     tree
+    openssh
 
     # AI Agent tools
     gh        # GitHub CLI (for gh auth, gh copilot, etc.)
