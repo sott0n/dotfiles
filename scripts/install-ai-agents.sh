@@ -25,6 +25,19 @@ else
     fi
 fi
 
+# mgrep (semantic grep for AI agents)
+if command -v mgrep &> /dev/null; then
+    echo "[mgrep] Already installed: $(mgrep --version 2>/dev/null || echo 'installed')"
+else
+    if command -v npm &> /dev/null; then
+        echo "[mgrep] Installing via npm..."
+        npm install -g @mixedbread/mgrep
+        echo "[mgrep] Installed. Run 'mgrep login' to authenticate."
+    else
+        echo "[mgrep] Skipped: npm not found. Run 'home-manager switch' first."
+    fi
+fi
+
 # GitHub CLI authentication check
 if command -v gh &> /dev/null; then
     if gh auth status &> /dev/null; then
@@ -41,4 +54,5 @@ echo "=== Setup Complete ==="
 echo "Next steps:"
 echo "  claude login     # Authenticate Claude Code"
 echo "  codex --login    # Authenticate Codex (if installed)"
+echo "  mgrep login      # Authenticate mgrep (if installed)"
 echo "  gh auth login    # Authenticate GitHub CLI"

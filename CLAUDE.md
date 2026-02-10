@@ -82,5 +82,6 @@ Prerequisites installed via Nix: `gh` (GitHub CLI), `nodejs`
 # Then authenticate each tool
 claude login       # Claude Code
 codex --login      # OpenAI Codex
+mgrep login        # mgrep (semantic search)
 gh auth login      # GitHub CLI
 ```
