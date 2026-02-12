@@ -28,6 +28,7 @@
 
       # Nix dev environments
       tt-mlir-dev = "nix develop ~/.dotfiles/tt/tt-mlir";
+      tt-metal-dev = "nix develop ~/.dotfiles/tt/tt-metal";
 
       # Git
       gs = "git status";

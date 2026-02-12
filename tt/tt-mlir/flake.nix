@@ -39,7 +39,13 @@
             git
 
             # Libraries
+            gmp
+            libmpc
+            mpfr
+            numactl
+            numactl.dev
             hwloc
+            hwloc.dev
             tbb_2021_11
             capstone
             yaml-cpp
@@ -62,6 +68,7 @@
             python310Packages.pybind11
 
             # Utilities
+            gnupatch
             wget
             curl
             jq
