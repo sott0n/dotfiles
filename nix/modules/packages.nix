@@ -19,6 +19,7 @@
 
     # Development tools
     ctags
+    protobuf
 
     # Python
     uv  # Fast Python package/project manager (replaces pyenv, pip, venv)

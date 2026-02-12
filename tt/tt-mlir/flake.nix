@@ -37,6 +37,7 @@
 
             # Version control
             git
+            git-lfs
 
             # Libraries
             gmp
@@ -54,18 +55,27 @@
             ncurses
             libxml2
             libffi
+            libevent
+
+            # Protobuf and dependencies (tt-xla)
+            protobuf
+            abseil-cpp
+            gtest
+
+            # C++ standard library for Clang
+            llvmPackages_17.libcxx
 
             # Documentation
             pandoc
             doxygen
             graphviz
 
-            # Python 3.10
-            python310
-            python310Packages.pip
-            python310Packages.virtualenv
-            python310Packages.setuptools
-            python310Packages.pybind11
+            # Python 3.11
+            python311
+            python311Packages.pip
+            python311Packages.virtualenv
+            python311Packages.setuptools
+            python311Packages.pybind11
 
             # Utilities
             gnupatch
@@ -79,6 +89,10 @@
             file
             coreutils
             bash
+
+            # tt-xla specific
+            ffmpeg      # For Whisper/Wav2Vec2 models
+            unixtools.xxd
           ];
 
           multiPkgs = pkgs: with pkgs; [
@@ -91,12 +105,12 @@
             export TTMLIR_TOOLCHAIN_DIR=''${TTMLIR_TOOLCHAIN_DIR:-$HOME/.ttmlir-toolchain}
             mkdir -p "$TTMLIR_TOOLCHAIN_DIR"
 
-            # Create symlink for ld.lld-17 if it doesn't exist
-            if [ ! -f /usr/bin/ld.lld-17 ] && [ -f /usr/bin/ld.lld ]; then
-              mkdir -p $HOME/.local/bin
-              ln -sf /usr/bin/ld.lld $HOME/.local/bin/ld.lld-17
-              export PATH="$HOME/.local/bin:$PATH"
-            fi
+            # Create symlinks for clang-17/clang++-17 (Nix uses clang/clang++)
+            mkdir -p $HOME/.local/bin
+            ln -sf $(which clang) $HOME/.local/bin/clang-17
+            ln -sf $(which clang++) $HOME/.local/bin/clang++-17
+            ln -sf $(which ld.lld) $HOME/.local/bin/ld.lld-17
+            export PATH="$HOME/.local/bin:$PATH"
 
             # Setup toolchain's llvm_gtest as GTest for CMake
             GTEST_COMPAT_DIR="$HOME/.local/share/cmake/GTest"
