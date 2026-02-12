@@ -105,26 +105,6 @@
             if [ -f "python_env/bin/activate" ]; then
               source python_env/bin/activate
             fi
-
-            echo ""
-            echo "╔══════════════════════════════════════════════════════════════╗"
-            echo "║       tt-metal Development Environment (FHS Compatible)      ║"
-            echo "╚══════════════════════════════════════════════════════════════╝"
-            echo ""
-            echo "Build steps (no install_dependencies.sh needed):"
-            echo "  1. cd tt-metal"
-            echo "  2. ./build_metal.sh                # Build tt-metal"
-            echo "  3. ./create_venv.sh                # Create Python virtual environment"
-            echo "  4. source python_env/bin/activate  # Activate venv"
-            echo ""
-            echo "Environment variables (set automatically when in tt-metal dir):"
-            echo "  TT_METAL_HOME=$TT_METAL_HOME"
-            echo "  PYTHONPATH includes TT_METAL_HOME"
-            echo ""
-            echo "Note: If build fails due to missing dependencies, you may need"
-            echo "      to run 'sudo ./install_dependencies.sh' outside this shell"
-            echo "      for system-level setup (hugepages, kernel modules, etc.)"
-            echo ""
           '';
 
           runScript = "bash";
