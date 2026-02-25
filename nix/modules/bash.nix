@@ -4,6 +4,13 @@
   programs.bash = {
     enable = true;
 
+    # Source Nix profile to set PATH
+    profileExtra = ''
+      if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
+        . ~/.nix-profile/etc/profile.d/nix.sh
+      fi
+    '';
+
     historySize = 100000;
     historyFileSize = 100000;
     historyControl = [ "ignoredups" "erasedups" ];
