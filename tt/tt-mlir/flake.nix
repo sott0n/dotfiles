@@ -52,6 +52,7 @@
             yaml-cpp
             boost
             zlib
+            openssl
             ncurses
             libxml2
             libffi
@@ -70,12 +71,12 @@
             doxygen
             graphviz
 
-            # Python 3.11
-            python311
-            python311Packages.pip
-            python311Packages.virtualenv
-            python311Packages.setuptools
-            python311Packages.pybind11
+            # Python 3.12
+            python312
+            python312Packages.pip
+            python312Packages.virtualenv
+            python312Packages.setuptools
+            python312Packages.pybind11
 
             # Utilities
             gnupatch
