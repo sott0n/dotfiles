@@ -18,7 +18,14 @@
   # PATH additions
   home.sessionPath = [
     "$HOME/.local/bin"
+    "$HOME/.npm-global/bin"
   ];
+
+  # npm global packages directory (avoids permission issues with Nix-managed Node.js)
+  home.file.".npm-global/.keep".text = "";
+  home.file.".npmrc".text = ''
+    prefix=~/.npm-global
+  '';
 
   # Environment variables
   home.sessionVariables = {

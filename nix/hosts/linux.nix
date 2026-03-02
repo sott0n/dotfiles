@@ -1,6 +1,11 @@
 { config, pkgs, lib, ... }:
 
 {
+  # Override tmux to disable libutempter (fixes "not a terminal" error)
+  programs.tmux.package = pkgs.tmux.override {
+    withUtempter = false;
+  };
+
   # Linux-specific packages
   home.packages = with pkgs; [
     xsel       # Clipboard support
