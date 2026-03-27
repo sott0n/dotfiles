@@ -60,6 +60,14 @@
 
     initExtra = ''
       # ------------------------------------
+      # Home Manager session variables (PATH, etc.)
+      # ------------------------------------
+      unset __HM_SESS_VARS_SOURCED
+      if [ -e ~/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then
+        . ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+      fi
+
+      # ------------------------------------
       # Vim mode
       # ------------------------------------
       set -o vi
@@ -137,6 +145,11 @@
           bind -x '"\C-b": peco-git-branch-checkout'
           bind -x '"\C-x": peco-kubectx'
       fi
+
+      # ------------------------------------
+      # npm global packages
+      # ------------------------------------
+      export PATH="$HOME/.npm-global/bin:$PATH"
 
       # ------------------------------------
       # Load local settings
